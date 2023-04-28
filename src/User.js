@@ -17,6 +17,7 @@ class User {
   logIn(password){
     let originalPassword = this.getOriginalPassword();
     if(password === originalPassword){
+      this.loggedIn = true;
       return `${this.username} is logged in`
     }else {
       throw new Error('Incorrect password')
