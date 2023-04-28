@@ -18,14 +18,18 @@ class User {
     let originalPassword = this.getOriginalPassword();
     if(password === originalPassword){
       this.loggedIn = true;
-      return `${this.username} is logged in`
+      return `${this.username} is now logged in`
     }else {
       throw new Error('Incorrect password')
     }
   }
   logOut(){
-    this.loggedIn = false;
-    return `${this.username} is logged out`;
+    if(this.loggedIn === false){
+      return `${this.username} is already logged out`
+    }else if(this.loggedIn === true){
+      this.loggedIn = false;
+      return `${this.username} is now logged out`;
+    }
   }
 }
 

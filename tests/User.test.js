@@ -21,13 +21,13 @@ describe('create new user', () => {
     })
 // test login
     test('logs in user', () => {
-        expect(user1.logIn('thRee3')).toBe('Mikes_account is logged in')
+        expect(user1.logIn('thRee3')).toBe('Mikes_account is now logged in')
         expect(() => {
             user1.logIn('tHtee3')
         }).toThrow('Incorrect password')
     })
 // test logout
     test('logs out user', () => {
-        expect(user1.logOut()).toBe('Mikes_account is logged out')
+        expect(user1.logOut()).toBe('Mikes_account is now logged out')
     })
 })
